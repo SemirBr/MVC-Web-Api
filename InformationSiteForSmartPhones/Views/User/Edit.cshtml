@@ -1,0 +1,74 @@
+﻿@using InformationSiteForSmartPhones.Entities;
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    User item = (User)ViewData["item"];
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <style>
+        body {
+            background-image: url('https://www.kindpng.com/picc/m/146-1468319_edit-profile-female-icon-png-transparent-png.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 1600px 770px;
+        }
+    </style>
+</body>
+</html>
+<td>
+    <fieldset>
+        <legend> Form </legend>
+        <form action="/User/Edit" method="post">
+            <input type="hidden" name="Id" value="@item.Id" />
+            <table>
+                <tr>
+                    <td> Username: </td>
+                    <td>
+                        <input type="text" name="username" value="@item.Username" />
+                    </td>
+                    <td>
+                        <strong> @ViewData["usernameError"]</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Password: </td>
+                    <td>
+                        <input type="password" name="password" value="@item.Password" />
+                    </td>
+                    <td>
+                        <strong> @ViewData["passwordError"]</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td> First Name: </td>
+                    <td>
+                        <input type="text" name="FirstName" value="@item.FirstName" />
+                    </td>
+                    <td>
+                        <strong> @ViewData["FirstNameError"]</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Last Name: </td>
+                    <td>
+                        <input type="text" name="LastName" value="@item.LastName" />
+                    </td>
+                    <td>
+                        <strong> @ViewData["LastNameError"]</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Save" />
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+    </fieldset>
+</td>
+

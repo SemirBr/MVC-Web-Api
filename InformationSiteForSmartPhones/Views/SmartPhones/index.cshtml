@@ -1,0 +1,55 @@
+﻿@using InformationSiteForSmartPhones.Entities;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+  
+        <table>
+            <tr>
+                <td>Manufacturer</td>
+                <td>Model</td>
+                <td>InteralMemory</td>
+                <td>RamMemory</td>
+                <td>ResolutionOfCamera</td>
+            </tr>
+
+            @foreach (SmartPhones item in (List<SmartPhones>)ViewData["item"])
+            {
+                <tr>
+                    <td> @item.Manufacturer </td>
+                    <td> @item.Model </td>
+                    <td> @item.InteralMemory</td>
+                    <td> @item.RamMemory</td>
+                    <td> @item.ResolutionOfCamera</td>
+                    <td>
+                        <a href="/SmartPhones/Edit?id=@item.Id" style="margin:0 10px"> Edit </a>
+                        <a href="/SmartPhones/Delete?id=@item.Id" style="margin:0 10px"> Delete </a>
+                        <a href="/SmartPhones/Create?id=@item.Id" style="margin:0 10px"> Create </a>
+                    </td>
+                </tr>
+
+            }
+
+        </table>
+
+
+    <style>
+        body {
+            background-image: url('https://www.teahub.io/photos/full/12-120013_apple-pink-best-quality-wallpapers-pic-wsw2054331-cool.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 1600px 770px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿@using InformationSiteForSmartPhones.Entities;
+<html>
+<head>
+    <title>
+        Smart Arena
+    </title>
+</head>
+<body>
+    <div>
+        <table style="width:100%;">
+            <tr>
+                <td>
+                    <h1 style="float:left;"> Smart Arena </h1>
+                    <div style="float:right;">
+                        Hello, <strong>
+                            @(Session["loggedUser"] == null ? "Wellcome to Everyone" : ((User)Session["loggedUser"]).Username)
+
+                        </strong> !
+
+                        @if (Session["loggedUser"] == null)
+                        {
+                            <a href="/home/login"> Login </a>
+                        }
+                        else
+                        {
+                            <a href="/home/logout"> Logout </a>
+                        }
+
+
+                    </div>
+                </td>
+            </tr>        
+            <tr>
+                <td>
+                    <p style="color:red">
+                        
+                        <ul>
+                            <li style="float:left; margin: 0 10px;"> <h3><a href="/home/index"> Home </a> </h3></li>
+                            <li style="float:left; margin: 0 10px;"><h3> <a href="/user/index"> Users </a></h3></li>
+                            <li style="float:left; margin: 0 10px;"> <h3><a href="/smartphones/index"> SmartPhones </a></h3></li>
+                            <li style="float:left; margin: 0 10px;"> <h3><a href="/Details/index"> SmartPhonesDetails </a></h3></li>
+                            <li style="float:right; margin: 0 0px;"> <h3><a href="/ContactWithUs/index"> Contact With Us </a></h3></li>       
+                        </ul>
+                        
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                @RenderBody()
+
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

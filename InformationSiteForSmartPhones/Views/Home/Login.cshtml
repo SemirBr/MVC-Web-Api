@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body style="background-color:powderblue;">
+    
+    <td style="background-color: #F4A460;">
+        <fieldset>
+            <legend> Login </legend>
+            <form action="/home/login" method="post">
+                <strong style="color:red;"> @ViewData["authErr"] </strong>
+                <table>
+                    <tr>
+                        <td> Username:</td>
+                        <td>
+                            <input type="text" name="username" value="@ViewData["username"]" />
+                        </td>
+                        <td>
+                            <strong style="color:red;"> @ViewData["usernameError"]</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Password:</td>
+                        <td>
+                            <input type="password" name="password" value="@ViewData["password"]" />
+                        </td>
+                        <td>
+                            <strong style="color:red;"> @ViewData["passwordError"]</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Login" style="float:right;" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </fieldset>
+    </td>
+</body>
+</html>

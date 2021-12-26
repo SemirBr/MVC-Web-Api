@@ -1,0 +1,82 @@
+﻿@using InformationSiteForSmartPhones.Entities;
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    SmartPhones item = (SmartPhones)ViewData["item"];
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <style>
+        body {
+            background-image: url('https://previews.123rf.com/images/milkos/milkos1811/milkos181101314/113411899-photography-editing-concept-woman-using-blank-smartphone-on-white-background.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 1600px 770px;
+        }
+    </style>
+</body>
+</html>
+<td>
+    <fieldset>
+        <legend> Form </legend>
+        <form action="/SmartPhones/Edit" method="post">
+            <input type="hidden" name="Id" value="@item.Id" />
+            <table>
+                <tr>
+                    <td> Manufacturer: </td>
+                    <td>
+                        <input type="text" name="manufacturer" value="@item.Manufacturer" />
+                    </td>
+                    <td>
+                        <strong> @ViewData["manufacturerError"]</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Model: </td>
+                    <td>
+                        <input type="text" name="model" value="@item.Model" />
+                    </td>
+                    <td>
+                        <strong> @ViewData["modelError"]</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Interal Memory: </td>
+                    <td>
+                        <input type="text" name="interalMemory" value="@item.InteralMemory" />
+                    </td>
+                    <td>
+                        <strong> @ViewData["interalMemoryError"]</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Ram Memory: </td>
+                    <td>
+                        <input type="text" name="ramMemory" value="@item.RamMemory" />
+                    </td>
+                    <td>
+                        <strong> @ViewData["ramMemoryError"]</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Resolution Of Camera: </td>
+                    <td>
+                        <input type="text" name="resolutionOfCamera" value="@item.ResolutionOfCamera" />
+                    </td>
+                    <td>
+                        <strong> @ViewData["resolutionOfCameraError"]</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Save" />
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+    </fieldset>
+</td>

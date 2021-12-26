@@ -1,0 +1,45 @@
+﻿@using InformationSiteForSmartPhones.Entities;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>SmartPhone</td>
+            <td>Details</td>
+        </tr>
+
+        @foreach (SmartPhonesDetails item in (List<SmartPhonesDetails>)ViewData["item"])
+        {
+            <tr>
+                <td> @item.NameOfSmartPhone </td>
+               <td><a href="@item.Details"target="_blank">Detailed Information About Smartphone</a></td>
+            </tr>
+
+        }
+
+    </table>
+
+
+    <style>
+        body {
+            background-image: url('https://www.teahub.io/photos/full/12-120013_apple-pink-best-quality-wallpapers-pic-wsw2054331-cool.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 1600px 770px;
+        }
+    </style>
+</body>
+</html>
+

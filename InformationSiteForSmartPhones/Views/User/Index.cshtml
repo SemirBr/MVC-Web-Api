@@ -1,0 +1,47 @@
+﻿@using InformationSiteForSmartPhones.Entities;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td> UserName </td>
+            <td> First Name </td>
+            <td> Last Name </td>
+            <td> Edit & Delete </td>
+        </tr>
+
+        @foreach (User item in (List<User>)ViewData["items"])
+        {
+            <tr>
+                <td>@item.Username </td>
+                <td>@item.FirstName </td>
+                <td>@item.LastName </td>
+                <td>
+                    <a href="/User/Edit?id=@item.Id" style="margin:0 10px"> Edit </a>
+                    <a href="/User/Delete?id=@item.Id" style="margin:0 10px"> Delete </a>
+                </td>
+            </tr>
+        }
+    </table>
+    <style>
+        body {
+            background-image: url('https://www.teahub.io/photos/full/12-120013_apple-pink-best-quality-wallpapers-pic-wsw2054331-cool.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 1600px 770px;
+        }
+    </style>
+</body>
+</html>
+
